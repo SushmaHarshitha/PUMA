@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./puma.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+  <main id="nav">
+    <nav id="sub-nav1">
+      <h1>FREE DELIVERIES.FREE RETURNS</h1>
+    </nav>
+  </main>
+  <nav id="sub-nav2">
+    <div class="div">
+      <span><img src="data:image/png;base64,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" alt=""></span>
+      <span id="new1">New</span>
+      <span id="women">Women</span>
+      <span id="men">Men</span>
+      <span id="kid">Kids</span>
+      <span>FENTYxPUMA</span>
+      <span id="sport">Motorsport</span>
+      <span id="collab">Collaborations</span>
+      <span id="sports">Sports</span>
+      <span id="out">Outlet</span>
+    </div>
+    <button id="search"><i class="bi bi-search"></i>SEARCH</button>
+    <div class="div1">
+      <span class="span"><i class="bi bi-heart"></i></span>
+      <span class="span"><i class="bi bi-cart"></i></span>
+      <span id="login" class="span"><i class="bi bi-person"></i></span>
+    </div>
+  </nav>
+
+  <aside id="search1">
+    <nav>
+      <input type="search" name="" id="" placeholder="SEARCH PUMA.COM">
+      <i id="i11" class="bi bi-search"></i>
+    </nav>
+    <ul id="ul2" type="none">
+      <li>TRENDING SEARCHES</li>
+      <li>Shoes for Men</li>
+      <li>Sneakers</li>
+      <li>Slides</li>
+      <li>Shoes</li>
+      <li>Jacket for Men</li>
+      <li>Jacket</li>
+    </ul>
+    <div id="div12">
+      <div class="div1">
+        <img height="83px" width="85px" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/394371/01/sv01/fnd/IND/fmt/png/Smashic-Unisex-Sneakers" alt="">
+        <p class="p10">Smashic Unisex Sneakers <br>&#8377;2,699</p>
+      </div>
+      <div class="div1">
+        <img height="83px" width="85px" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/185999/02/sv01/fnd/IND/fmt/png/Redon-Move-Unisex-Sneakers" alt="">
+        <p class="p11">Redon Move Unisex Sneakers <br>&#8377;3,019</p>
+      </div>
+    </div>
+    <div id="div13">
+      <div class="div2">
+        <img height="83px" width="85px" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/185999/02/sv01/fnd/IND/fmt/png/Redon-Move-Unisex-Sneakers" alt="">
+        <p class="p12">Ferrari Electron E Unisex Sneakers <br>&#8377;3,849</p>
+      </div>
+      <div class="div2">
+        <img height="83px" width="85px" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/185999/02/sv01/fnd/IND/fmt/png/Redon-Move-Unisex-Sneakers" alt="">
+        <p class="p13">Rider Future Vintage Unisex Sneakers <br> &#8377;6,029</p>
+      </div>
+    </div>
+    <div id="div14">
+      <div class="div3">
+        <img height="83px" width="85px" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/185999/02/sv01/fnd/IND/fmt/png/Redon-Move-Unisex-Sneakers" alt="">
+        <p class="p14">Aviator Unisex Running Shoes <br>&#8377;4,559</p>
+      </div>
+      <div class="div3">
+        <img height="83px" width="85px" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/192663/02/sv01/fnd/IND/fmt/png/Hybrid-Fuego-Women's-Running-Shoes" alt="">
+        <p class="p15">Hybrid Fuego Women's Running Shoes <br>&#8377;4,549</p>
+      </div>
+    </div>
+    <div id="div15">
+      <div class="div4">
+        <img height="83px" width="85px" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/378291/04/sv01/fnd/IND/fmt/png/SOFTRIDE-Enzo-Evo-Better-Rmx-Unisex-Running-Shoes" alt="">
+        <p class="p16">SOFTRIDE Enzo Evo Better Rmx Unisex Running <br>Shoes <br>&#8377;3,499</p>
+      </div>
+      <div class="div4">
+        <img height="83px" width="85px" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/378786/01/sv01/fnd/IND/fmt/png/Better-Foam-Prowl-Alt-Molt-Metal-Women's-Running-Shoes" alt="">
+        <p class="p17">Better Foam Prowl Alt Molt Metal Women's <br> Running Shoes <br>&#8377;3,899</p>
+      </div>
+    </div>
+  </aside>
+
+  <aside id="login1">
+    <p>My Account</p>
+    <p>Wishlist</p>
+    <p>Check Order/Initiate Return</p>
+    <p>Store Finder</p>
+    <p>Language</p>
+    <button id="btn">LOGIN</button>
+    <button id="btn1">REGISTER HERE</button>
+  </aside>
+
+  <aside id="new11">
+    <ul id="ul5" type="none">
+      <li>FLAT 30% OFF</li>
+      <li>Launch Calendar</li>
+      <li>Terrace</li>
+      <li>#PUMADive</li>
+      <li>The Never Worn</li>
+      <li>PUMA x RIPNDIP</li>
+      <li>PUMA x RHUIGI</li>
+      <li>Anushka's Favourite Fits</li>
+      <li>PUMA x THE SMURFS</li>
+      <li>Mancity 23/24 Kit</li>
+      <li>Nitro Collection</li>
+      <li>PUMA 75 YEARS</li>
+    </ul>
+    <ul id="ul6" type="none">
+      <li>Shop By Gender</li>
+      <li>Men</li>
+      <li>Women</li>
+      <li>Kids & Teens</li>
+    </ul>
+    <ul id="ul7" type="none">
+      <li>Classics</li>
+      <li>Shoes</li>
+      <li>Clothing</li>
+      <li>Accessories</li>
+    </ul>
+    <ul id="ul8" type="none">
+      <li>Sneaker Store</li>
+      <li>RS</li>
+      <li>Cali</li>
+      <li>Mayze</li>
+      <li>Rider</li>
+      <li>Slipstream</li>
+      <li>Suede</li>
+      <li>Clyde</li>
+    </ul>
+  </aside>
+
+  <aside id="women1">
+    <ul id="ul9" type="none">
+      <li style="color: red;">Sale</li>
+      <li style="color: brown;">New & Trending</li>
+      <li>#PUMADive</li>
+      <li>Softride</li>
+      <li>Terrace</li>
+      <li>Anushka's</li>
+      <li>Favourite Fits</li>
+      <li>Nitro Running</li>
+      <li>Curated by</li>
+      <li>Shanaya</li>
+      <li>Sports Bras</li>
+      <li>Maternity Clothing</li>
+      <li>Sustainable</li>
+      <li>Collection</li>
+    </ul>
+    <ul id="ul10" type="none">
+      <li>Shoes</li>
+      <li>Sneakers</li>
+      <li>Running</li>
+      <li>Walking</li>
+      <li>Training & Gym</li>
+      <li>Slip-ons & Ballerinas</li>
+      <li>Sandals & Flip Flops</li>
+      <li>Motorsport</li>
+      <li>Badminton</li>
+      <li>Softride</li>
+      <li>Nitro</li>
+    </ul>
+    <ul id="ul11" type="none">
+      <li>Clothing</li>
+      <li>T-Shirts & Tops</li>
+      <li>Polos</li>
+      <li>Sports Bras</li>
+      <li>Jackets</li>
+      <li>Sweatshirts & Hoodies</li>
+      <li>Shorts</li>
+      <li>Pants</li>
+      <li>Tights & Leggings</li>
+      <li>Dresses & Skirts</li>
+      <li>Maternity Clothing</li>
+      <li>Homewear</li>
+      <li>Thermals & Winterwear</li>
+      <li>Innerwear</li>
+      <li>Modest Wear</li>
+      <li>Motorsport</li>
+      <li>Tracksuits</li>
+    </ul>
+    <ul id="ul12" type="none">
+      <li>Accessories</li>
+      <li>Caps & Beanies</li>
+      <li>Backpacks</li>
+      <li>Bags Gym & Casual</li>
+      <li>Socks</li>
+      <li>Water Bottles</li>
+      <li>Sports Equipment</li>
+      <li>Wallets</li>
+      <li>Gloves</li>
+      <li>Face Masks</li>
+      <li>Motorsport</li>
+      <li>Eyewear</li>
+    </ul>
+    <ul id="ul13" type="none">
+      <li>Sports</li>
+      <li>Yoga</li>
+      <li>Running</li>
+      <li>Training</li>
+      <li>Basketball</li>
+      <li>Badminton</li>
+      <li>Cricket</li>
+      <li>Football</li>
+    </ul>
+    <ul id="ul14" type="none">
+      <li>Motorsport</li>
+      <li>Scuderia Ferrari</li>
+      <li>BMW M Motorsport</li>
+    </ul>
+  </aside>
+
+  <aside id="men1">
+    <ul id="ul9" type="none">
+      <li style="color: red;">Sale</li>
+      <li style="color: brown;">New & Trending</li>
+      <li>#PUMADive</li>
+      <li>Terrace</li>
+      <li>Nitro Running</li>
+      <li>Motorsport</li>
+      <li>Softride</li>
+      <li>Sustainable</li>
+      <li>Collection</li>
+    </ul>
+    <ul id="ul10" type="none">
+      <li>Shoes</li>
+      <li>Sneakers</li>
+      <li>Running</li>
+      <li>Walking</li>
+      <li>Training & Gym</li>
+      <li>Slip-ons</li>
+      <li>Sandals & Flip Flops</li>
+      <li>Motorsport</li>
+      <li>Cricket</li>
+      <li>Badminton</li>
+      <li>Basketball</li>
+      <li>Football</li>
+      <li>Softride</li>
+      <li>Nitro</li>
+      <li>TLR Blaze</li>
+    </ul>
+    <ul id="ul11" type="none">
+      <li>Clothing</li>
+      <li>T-Shirts Active & Casual</li>
+      <li>Polos</li>
+      <li>Jackets</li>
+      <li>Sweatshirts & Hoodies</li>
+      <li>Pants</li>
+      <li>Shorts</li>
+      <li>Tracksuits</li>
+      <li>Team Jerseys</li>
+      <li>Homewear</li>
+      <li>Thermals & Winterwear</li>
+      <li>Innerwear</li>
+      <li>Motorsport</li>
+    </ul>
+    <ul id="ul12" type="none">
+      <li>Accessories</li>
+      <li>Caps & Beanies</li>
+      <li>Backpacks</li>
+      <li>Bags Gym & Casual</li>
+      <li>Socks</li>
+      <li>Face Masks</li>
+      <li>Gloves</li>
+      <li>Sports Equipment</li>
+      <li>Wallets</li>
+      <li>Water Bottles</li>
+      <li>Motorsport</li>
+      <li>Eyewear</li>
+    </ul>
+    <ul id="ul13" type="none">
+      <li>Sports</li>
+      <li>Cricket</li>
+      <li>Football</li>
+      <li>Basketball</li>
+      <li>Running</li>
+      <li>Training & Gym</li>
+      <li>Badminton</li>
+      <li>Golf</li>
+      <li>Yoga</li>
+    </ul>
+    <ul id="ul14" type="none">
+      <li>Scuderia Ferrari</li>
+      <li>BMW M Motorsport</li>
+      <li>Mercedes AMG Petronas</li>
+      <li>Porsche Legacy</li>
+    </ul>
+  </aside>
+
+  <aside id="kid1">
+    <ul id="ul15" type="none">
+      <li>Kids' Store</li>
+      <li>Sale</li>
+      <li>New & Trending</li>
+      <li>Scool Store</li>
+      <li>Shoes Under &#8377;3000</li>
+      <li>Clothing Under</li>
+      <li>&#8377;1000</li>
+      <li>Motorsport</li>
+      <li>one8</li>
+    </ul>
+    <ul id="ul16" type="none">
+      <li>Season's Favourites</li>
+      <li>PUMA x MIRACULOUS</li>
+      <li>PUMA x SPONGEBOB</li>
+      <li>School Store</li>
+      <li>Super Puma</li>
+      <li>Sets</li>
+      <li>Homewear</li>
+    </ul>
+    <ul id="ul17" type="none">
+      <li>Boys</li>
+      <li>Bags & Accessories</li>
+      <li>Shoes
+        <ul class="ol" type="none">
+          <li>Casual</li>
+          <li>Sports</li>
+          <li>Sandals & Flip Flops</li>
+          <li>School Shoes</li>
+        </ul>
+      </li>
+      <li>Clothing
+        <ul class="ol" type="none">
+          <li>T-Shirts</li>
+          <li>Hoodies & Sweatshirts</li>
+          <li>Pants & Shorts</li>
+          <li>Jackets</li>
+        </ul>
+      </li>
+      <li>AGE 0-4 YEARS</li>
+      <li>AGE 4-8 YEARS</li>
+      <li>AGE 8-16 YEARS</li>
+    </ul>
+    <ul id="ul18" type="none">
+      <li>Girls</li>
+      <li>Bags & Accessories</li>
+      <li>Shoes
+        <ul class="ol" type="none">
+          <li>Casual</li>
+          <li>Sports</li>
+          <li>Sandals & Flip Flops</li>
+          <li>School Shoes</li>
+        </ul>
+      </li>
+      <li>Clothing
+        <ul class="ol" type="none">
+          <li>T-Shirt</li>
+          <li>Hoodies & Sweatshirts</li>
+          <li>Jackets</li>
+          <li>Pants & Shorts</li>
+        </ul>
+      </li>
+      <li>AGE 0-4 YEARS</li>
+      <li>AGE 4-8 YEARS</li>
+      <li>AGE 8-16 YEARS</li>
+    </ul>
+    <ul id="ul19" type="none">
+      <li>Sports</li>
+      <li>Football</li>
+      <li>Cricket</li>
+      <li>Basketball</li>
+      <li>Running</li>
+      <li>Indoor Sports</li>
+    </ul>
+    <ul id="ul20" type="none">
+      <li>Motorsport</li>
+      <li>Scuderia Ferrari</li>
+      <li>BMW M Motorsport</li>
+      <li>Mercedes AMG Petronas</li>
+    </ul>
+  </aside>
+
+  <aside id="sport1">
+      <ul id="ul3" type="none">
+        <li>Motorsport Store</li>
+        <li>Scuderia Ferrari</li>
+        <li>Mercedes AMG Petronas</li>
+        <li>BMW M Motorsport</li>
+      </ul>
+      <ul id="ul4" type="none">
+        <li>Porsche Legacy</li>
+        <li>Porsche Design</li>
+        <li>Shoes</li>
+        <li>Clothing</li>
+      </ul>
+      <p id="p18">Accessories</p>
+    </aside>
+  <aside id="collab1">
+    <ul id="ul21" type="none">
+      <li>Select</li>
+      <li>PUMA x PLEASURES</li>
+      <li>PUMA x PERKS AND MINI</li>
+      <li>PUMA x DAPPER DAN</li>
+      <li>PUMA x RHUIGI</li>
+      <li>PUMA x MMQ</li>
+      <li>PUMA x WINTER RINK</li>
+    </ul>
+    <ul id="ul22" type="none">
+      <li>Partnerships</li>
+      <li>PUMA x STAPLE</li>
+      <li>PUMA x RIPNDIP</li>
+      <li>PUMA x THE SMURFS</li>
+      <li>PUMA x one8</li>
+      <li>Manchester City FC</li>
+      <li>PUMA x PALM TREE CREW</li>
+      <li>PUMA x LEMLEM</li>
+      <li>PUMA x MIRACULOUS</li>
+      <li>PUMA x SPONGEBOB | KIDS</li>
+      <li>PUMA x FIRST MILE</li>
+      <li>PUMA x CIELE</li>
+      <li>Mumbai City FC</li>
+      <li>A C Milan</li>
+      <li>Neymar Jr</li>
+      <li>BVB</li>
+      <li>PUMA x RCB</li>
+      <li>Bengaluru FC</li>
+      <li>PUMA x HARRDY SANDHU</li>
+    </ul>
+  </aside>
+
+  <aside id="sports1">
+    <ul id="ul23" type="none">
+      <li>Running</li>
+      <li>Running Store</li>
+      <li>Everyday Running</li>
+      <li>5-10 km Running</li>
+      <li>Long Distance Running</li>
+      <li>Trail Running</li>
+      <li>Clothing</li>
+      <li>Accessories</li>
+      <li>Nitro Collection</li>
+      <li>First Mile</li>
+      <li>Seasons Collection</li>
+    </ul>
+    <ul id="ul24" type="none">
+      <li>Training</li>
+      <li>Shoes</li>
+      <li>Gym Wear</li>
+      <li>Gym Bags & Accessories</li>
+      <li>Yoga</li>
+      <li>Sports Bras</li>
+      <li>Maternity Wear</li>
+    </ul>
+    <ul id="ul25" type="none">
+      <li>Cricket</li>
+      <li>Cricket Shoes - Rubber</li>
+      <li>Cricket Shoes - Spike</li>
+      <li>Clothing</li>
+      <li>Cricket Gear & Accessories</li>
+      <li>Puma x RCB</li>
+    </ul>
+    <ul id="ul26" type="none">
+      <li>Football</li>
+      <li>Turf Trainers</li>
+      <li>Firm/Artificial Ground Boots</li>
+      <li>Indoor Shoes</li>
+      <li>Clothing</li>
+      <li>Footballs & Accessories</li>
+      <li>Manchester City FC</li>
+      <li>BVB</li>
+      <li>AC Milan</li>
+      <li>Mumbai City FC</li>
+      <li>Bengaluru FC</li>
+      <li>Pursuit Pack</li>
+    </ul>
+    <ul id="ul27" type="none">
+      <li>Basketball</li>
+      <li>Shoes</li>
+      <li>Clothing</li>
+      <li>PUMA x MELO</li>
+    </ul>
+    <ul id="ul28" type="none">
+      <li>Badminton</li>
+      <li>Non-marking Shoes</li>
+    </ul>
+    <ul id="ul29" type="none">
+      <li>Fanwear</li>
+      <li>Puma x RCB</li>
+      <li>Neymar Jr</li>
+      <li>Manchester City FC</li>
+      <li>BVB</li>
+      <li>AC Milan</li>
+      <li>Mumbai City FC</li>
+      <li>Bengaluru FC</li>
+      <li>PUMA x INSTITUTO NEYMAR JR</li>
+    </ul>
+  </aside>
+
+  <aside id="out1">
+    <ul id="ul30" type="none">
+      <li>Shop All Outlet</li>
+      <li>Sport Shoes</li>
+      <li>Starting From</li>
+      <li>&#8377;1799</li>
+      <li>Motorsport</li>
+      <li>Collection Starting</li>
+      <li>from &#8377;999</li>
+      <li>Everything under</li>
+      <li>&#8377;1000</li>
+      <li>New To Outlet</li>
+  </ul>
+    <ul id="ul31" type="none">
+      <li>Outlet Men</li>
+      <li>Bags & Accessories</li>
+      <li>Shoes
+        <ul  type="none">
+          <li>Casual</li>
+          <li>Sandals & Flip Flops</li>
+          <li>Sports</li>
+          <li>Motorsport</li>
+        </ul>
+      </li>
+      <li>Clothing
+        <ul  type="none">
+          <li>T-Shirts</li>
+          <li>Hoodies & Sweatshirts</li>
+          <li>Jackets</li>
+          <li>Pants & Shorts</li>
+          <li>Polos</li>
+          <li>Tracksuits</li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="ul32" type="none">
+      <li>Outlet Women</li>
+      <li>Bags & Accessories</li>
+      <li>Shoes
+        <ul  type="none">
+          <li>Casual</li>
+          <li>Sandals & Flip Flops</li>
+          <li>Sports</li>
+          <li>Motorsport</li>
+        </ul>
+      </li>
+      <li>Clothing
+        <ul  type="none">
+          <li>T-Shirts & Tops</li>
+          <li>Hoodies & Sweatshirts</li>
+          <li>Pants & Shorts</li>
+          <li>Tights & Leggings</li>
+          <li>Innerwear</li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="ul33" type="none">
+      <li>Outlet Kids</li>
+      <li>Shoes
+        <ul>
+          <li>Casual</li>
+          <li>Sandals & Flip Flops</li>
+          <li>Sports</li>
+          <li>Motorsport</li>
+        </ul>
+      </li>
+      <li>Clothing
+        <ul>
+          <li>T-Shirts & Tops</li>
+          <li>Hoodies & Sweatshirts</li>
+          <li>Jackets</li>
+          <li>Pants & Shorts</li>
+          <li>Leggings</li>
+        </ul>
+      </li>
+    </ul>
+    <ul id="ul34" type="none">
+      <li>Outlet Motorsport</li>
+      <li>BMW M Motorsport</li>
+      <li>Mercedes AMG Petronas</li>
+      <li>Scuderia Ferrari</li>
+      <li>Porsche Legacy</li>
+    </ul>
+    <ul id="ul35" type="none">
+      <li>Outlet Sports</li>
+      <li>Football</li>
+      <li>Cricket</li>
+      <li>Basketball</li>
+      <li>Running</li>
+      <li>Training</li>
+      <li>Badminton</li>
+    </ul>
+  </aside>
+
+  <section id="main">
+    <h2 id="h1">EXTRA 10% OFF ON ORDERS ABOVE ₹3499 <br>EXTRA 15% OFF ON ORDERS ABOVE ₹4499</h2>
+    <p class="p">Discount auto-applied at checkout</p>
+  </section>
+  <section id="main1">
+    <h1 id="h2">NEW & TRENDING</h1>
+    <h2 id="h3">LEVEL UP YOUR STYLE GAME</h2>
+    <div class="div2">
+      <button type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  MEN
+</button>
+<button type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  WOMEN
+</button>
+<button type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  KIDS
+</button>
+    </div>
+  </section>
+  <section id="main2">
+    <br><br><br>
+    <div class="div3">
+      <h1 id="h4">INTRODUCING MB.03</h1>
+      <h2 id="h5">THE NEWEST ITERATION OF LAMELO BALL’S <br>SIGNATURE SHOE</h2>
+      <p class="p1">The shoe’s disruptive design is complemented by a supportive, double-layered mesh upper and a <br>Nitrofoam™ midsole for power on the court</p>
+      <button id="btn" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP NOW
+</button>
+    </div>
+    <video class="absolute inset-0 h-full w-full object-cover object-center" autoplay="" loop="" playsinline="" controlslist="nodownload">
+      <source src="https://cdn.sanity.io/files/qa41whrn/staging/50c713db8141ccc1a49c52f8aec2966f81e211e3.mp4" type="video/mp4" data-test-id="video-source">
+    </video>
+    <img id="img" src="./image/shoe.webp" alt="">
+  </section>
+  <section id="main3">
+    <h1 id="h6">CATCH THE <br>#PUMADive</h1>
+    <h2 id="h7">CLICK. SHARE. WIN</h2>
+    <button id="btn1" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  KNOW MORE
+</button>
+  </section>
+  <section id="main4">
+    <br><br><br>
+    <div class="div4">
+      <h1 id="h8">PUMA x P.A.M.</h1>
+      <h2 id="h9">RE-ENTERING THE PAM/PUMA BIO/VERSE</h2>
+      <button id="btn2" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP NOW
+</button>
+    </div>
+    <img id="img1" src="./image/shoe1.webp" alt="">
+    <img id="img2" src="./image/girl.webp" alt="">
+  </section>
+  <section id="main5">
+    <h1 id="h10">FENTY x PUMA</h1>
+    <h2 id="h11">NEW AVANTI DROP COMING SOON</h2>
+    <button id="btn3" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SIGN UP NOW
+</button>
+  </section>
+  <section id="main6">
+    <h1 id="h12">PUMA x DAPPER DAN</h1>
+    <h2 id="h13">WITH LOVE FROM HARLEM</h2>
+    <p class="p2">Worn by Virat and Anushka</p>
+    <button id="btn4" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP NOW
+</button>
+  </section>
+  <div class="div5">
+    <div class="card" style="width: 18rem;">
+      <img src="./image/img1.webp" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">CLASSIC POLO.MODERN FEEL</h5>
+        <p class="card-text">PUMA POLO T-SHIRTS</p>
+        <a class="a" href="#" class="btn btn-primary">SHOP NOW</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="./image/img2.webp" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">SLIPSTREAM</h5>
+        <p class="card-text">COURT MADE, STREET PROVEN</p>
+        <a class="a" href="#" class="btn btn-primary">SHOP NOW</a>
+      </div>
+    </div>
+  </div>
+  <section id="main7">
+    <h1 id="h14">PUMA x BMW M MOTORSPORT</h1>
+    <h2 id="h15">RACE DAY GEAR FOR EVERYDAY LIFE</h2>
+    <div class="div6">
+      <button class="btn5" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP COLLECTION
+</button>
+      <button class="btn5" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP SPINA NITRO
+</button>
+    </div>
+  </section>
+  <section id="main8">
+    <video class="w-full" autoplay="" controlslist="nodownload nofullscreen" disablepictureinpicture="" disableremoteplayback="" playsinline="" loop="" muted="">
+      <source src="https://cdn.sanity.io/files/qa41whrn/staging/c4a7a72fd42ce88f4e67faa77e7653798ec6b329.mp4"></video>
+    <button class="btn6" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  EXPLORE NOW
+</button>
+  </section><br>
+  <section id="main9">
+    <h1 id="h16">PROJECT FUTURE</h1>
+    <h2 id="h17">PUMA x INSTITUTO NEYMAR JR</h2>
+    <button class="btn7" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP NOW
+</button>
+  </section>
+  <section id="main10">
+    <h1 id="h18">FOR EVERY MOM</h1>
+    <h2 id="h19">PUMA MATERNITY CLOTHING</h2>
+    <p class="p3">Worn by Gabriella Demetriades</p>
+    <button class="btn8" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP NOW
+</button>
+  </section>
+  <section id="main11">
+    <h1 id="h20">AS WORN BY PUMA FAM</h1>
+    <p class="p4">Click to shop & mention us on instagram @pumaindia to be featured</p><br>
+    <div id="div4">
+      <span id="span1">
+        <img class="img9" src="./image/pic1.webp" alt="" height="250px" width="250px"><i id="i" class="bi bi-instagram"></i>
+        <img class="img9" src="./image/pic2.webp" alt="" height="250px" width="250px"><i id="i1" class="bi bi-instagram"></i>
+        <img class="img9" src="./image/pic3.webp" alt="" height="250px" width="250px"><i id="i2" class="bi bi-instagram"></i>
+        <img class="img9" src="./image/pic5.webp" alt="" height="250px" width="250px"><i id="i3" class="bi bi-instagram"></i>
+        <img class="img9" src="./image/pic6.webp" alt="" height="250px" width="250px"><i id="i4" class="bi bi-instagram"></i>
+      </span>
+      <span id="span2">
+        <img class="img9" src="./image/pic7.heic" alt="" height="250px" width="250px"><i id="i5" class="bi bi-instagram"></i>
+        <img class="img9" src="./image/pic8.webp" alt="" height="250px" width="250px"><i id="i6" class="bi bi-instagram"></i>
+        <img class="img9" src="./image/pic9.webp" alt="" height="250px" width="250px"><i id="i7" class="bi bi-instagram"></i>
+        <img class="img9" src="./image/pic10.webp" alt="" height="250px" width="250px"><i id="i8" class="bi bi-instagram"></i>
+        <img class="img9" src="./image/pic4.webp" alt="" height="250px" width="250px"><i id="i9" class="bi bi-instagram"></i>
+      </span>
+    </div>
+  </section>
+  <section id="main12">
+    <h1 id="h21">PWRFRAME TR2</h1>
+    <h2 id="h22">STABILITY FOR ANY WORKOUT</h2>
+    <button class="btn9" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP NOW
+</button>
+  </section>
+  <section id="main13">
+    <h1 id="h23">PUMA x MIRACULOUS</h1>
+    <h2 id="h24">PARISIAN LIGHTS</h2>
+    <button class="btn10" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP NOW
+</button>
+  </section>
+  <section id="main14">
+    <h1 id="h25">MOST POPULAR RIGHT NOW</h1><br>
+    <div class="div7">
+      <div id="div">
+        <img id="img3" src="./image/Sneakers.avif" alt="">
+        <p class="p">Velophasis Luxe Sport || Unisex <br> Sneakers</p>
+        <p class="p1">&#8377;12,999</p>
+      </div>
+      <div id="div1">
+        <img id="img4" src="./image/Sneakers1.avif" alt="">
+        <p class="p">Court Rider Superman 85th Unisex <br>Basketball Shoes</p>
+        <p class="p2">&#8377;10,999</p>
+      </div>
+      <div id="div2">
+        <img id="img5" src="./image/Sneakers3.avif" alt="">
+        <p class="p">ForeverRun NITRO Knit Men's <br>Running Shoes</p>
+        <p class="p3">&#8377;15,999</p>
+      </div>
+      <div id="div3">
+        <img id="img6" src="./image/Sneakers4.avif" alt="">
+        <p class="p">Scend Pro Unisex Running Shoes</p>
+        <p class="p4">&#8377;6,999</p>
+      </div>
+    </div>
+  </section>
+  <section id="main15">
+    <h1 id="h26">SOFTRIDE SHOES</h1>
+    <h2 id="h27">COMFORT ALL-DAY LONG</h2>
+    <button class="btn11" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP WOMEN
+</button>
+  </section>
+  <section id="main16">
+    <h1 id="h28">TRENDING NOW</h1><br>
+    <div class="div8">
+      <div class="card" style="width: 18rem;">
+        <img src="./image/picture.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">EVERYTHING TERRACE</h5>
+          <p class="card-text">Straight From The PUMA Archive</p>
+          <a class="a" href="#" class="btn btn-primary">SHOP NOW</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img class="img7" src="./image/picture1.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">FUELED BY NITRO</h5>
+          <p class="card-text">Lightweight, responsive foam technology</p>
+          <a class="a" href="#" class="btn btn-primary">SHOP NITRO</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="main17">
+    <img class="img8" src="./image/puma.png" alt="">
+    <h1 id="h29">PUMA x one8</h1>
+    <h2 id="h30">PLAY IT COOL</h2>
+    <p class="p5">Worn by Virat Kohli</p>
+    <button class="btn12" type="button"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  SHOP NOW
+</button>
+  </section>
+  <footer>
+    <div class="div9">
+      <ul type="none">
+        <li><span class="span">SUPPORT</span></li>
+        <li><a href="con">Contact Us</a></li>
+        <li><a href="pro">Promotions & Sale</a></li>
+        <li><a href="track">Track Order</a></li>
+        <li><a href="pp">Privacy Policy</a></li>
+        <li><a href="tc">Terms &Conditions</a></li>
+        <li><a href="setting">Cookie Settings</a></li>
+      </ul>
+      <ul class="ul" type="none">
+        <li><a href="faq">FAQs</a></li>
+        <li><a href="acc">My Account</a></li>
+        <li><a href="pol">Return Policy</a></li>
+        <li><a href="tech">Tech Glossary</a></li>
+        <li><a href="ret">Initiate Return</a></li>
+      </ul>
+        <ul class="ul1" type="none">
+          <li><span class="span">ABOUT</span></li>
+          <li><a href="com">Company</a></li>
+          <li><a href="cor">Corporate News</a></li>
+          <li><a href="press">Press Center</a></li>
+          <li><a href="Inv">Investors</a></li>
+          <li><a href="sus">Sustainability</a></li>
+          <li><a href="car">Careers</a></li>
+          <li><a href="str">Store Finder</a></li>
+          <li><a href="dna">PUMA DNA</a></li>
+        </ul>
+        <h2 id="h31">STAY UP TO DATE</h2>
+        <span class="span1">
+          <i class="bi bi-youtube"></i>
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-pinterest"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-facebook"></i>
+        </span>
+        <h2 id="h32">EXPLORE</h2>
+        <div class="div10">
+          <span class="span2"><img src="data:image/png;base64,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" alt=""><p class="p9">APP</p></span>
+          <span class="span2"><img src="data:image/png;base64,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" alt=""><p class="p9">TRAC</p></span>
+        </div>
+      </div>
+      <hr>
+      <div class="div11">
+        <img src="./image/visa.png" alt="" height="18px" width="40px">
+        <img src="./image/visa1.webp" alt="" height="18px" width="40px">
+        <img src="./image/visa2.svg" alt="" height="18px" width="40px">
+        <img src="./image/visa3.jpeg" alt="" height="18px" width="40px">
+      </div>
+      <span class="span3"><img class="img10" src="./image/india.jpeg" alt="" height="45px" width="65px"><p class="p8">INDIA</p></span>
+      <p class="p6">© PUMA INDIA LTD, 2023. ALL RIGHTS RESERVED.</p>
+      <p class="p7">IMPRINT AND LEGAL DATA</p>
+  </footer>
+
+  <script src="./puma.js"></script>
+</body>
+</html>
